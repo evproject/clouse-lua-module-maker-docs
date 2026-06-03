@@ -1,0 +1,33 @@
+{
+  "name": "Quick Start",
+  "id": "quick_start",
+  "version": "1.0.0",
+  "author": "You",
+  "description": "Starter module with load, unload, and tick hooks.",
+  "entry": "main.lua",
+  "template": "basic",
+  "apiVersion": "clouse-lua-module-v1",
+  "permissions": [
+    "chat:log",
+    "client:settings"
+  ],
+  "events": [
+    "load",
+    "unload",
+    "tick"
+  ],
+  "settings": [
+    {
+      "id": "enabled",
+      "type": "boolean",
+      "defaultValue": "true",
+      "description": "Master toggle exposed to the Lua module."
+    },
+    {
+      "id": "debug",
+      "type": "boolean",
+      "defaultValue": "false",
+      "description": "Print debug lines while testing."
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lua Module Studio Editor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Clouse Lua Module Maker</a>
+    <nav aria-label="Docs navigation">
+      <a href="index.html#workflow">Workflow</a>
+      <a href="editor.html">Editor</a>
+      <a href="safety.html">Safety</a>
+      <a href="publishing.html">GitHub Pages</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero docs-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Studio editor</p>
+        <h1>Build scripts without commands</h1>
+        <p class="lede">The editor buffer lets the client UI load module files, insert generated snippets, save them back to disk, and preview hook behavior before export.</p>
+      </div>
+      <div class="studio-panel">
+        <div class="panel-title">
+          <span>Editor actions</span>
+          <span class="status-dot"></span>
+        </div>
+        <div class="panel-body">
+          <div class="control-row"><span>Project</span><strong>quick_start</strong></div>
+          <div class="control-row"><span>File</span><strong>Main Script</strong></div>
+          <div class="control-row"><span>Snippet</span><strong>HUD Badge</strong></div>
+          <div class="button-grid">
+            <span>Load File</span>
+            <span>Insert Snippet</span>
+            <span>Save Buffer</span>
+            <span>Dry Run Preview</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Actions</p>
+        <h2>What each button does</h2>
+      </div>
+      <div class="api-grid">
+        <article>
+          <h3>Load File</h3>
+          <p>Reads the selected file into a bounded UTF-8 buffer and prints a short preview in chat.</p>
+        </article>
+        <article>
+          <h3>Insert Snippet</h3>
+          <p>Adds a generated Lua snippet to <code>main.lua</code> while preserving the final <code>return module</code>.</p>
+        </article>
+        <article>
+          <h3>Save Buffer</h3>
+          <p>Writes the buffer back to disk and validates JSON when saving manifests or settings.</p>
+        </article>
+        <article>
+          <h3>Dry Run Preview</h3>
+          <p>Scans hooks and reports the mock calls that would happen without executing Lua code.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split">
+      <div>
+        <p class="eyebrow">Project operations</p>
+        <h2>Duplicate, rename, delete</h2>
+        <p>Use <strong>Target Project</strong> to choose the destination slot. Delete requires <strong>Allow Delete</strong> so accidental clicks do not remove projects.</p>
+      </div>
+      <pre><code>Source Project: quick_start
+Target Project: custom_1
+
+Duplicate Project
+Rename Project
+Allow Delete -> Delete Project</code></pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Clouse Lua Module Maker</span>
+    <a href="index.html">Home</a>
+  </footer>
+</body>
+</html>

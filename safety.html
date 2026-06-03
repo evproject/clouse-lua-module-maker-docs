@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lua Module Safety</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Clouse Lua Module Maker</a>
+    <nav aria-label="Docs navigation">
+      <a href="index.html#workflow">Workflow</a>
+      <a href="editor.html">Editor</a>
+      <a href="safety.html">Safety</a>
+      <a href="publishing.html">GitHub Pages</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero docs-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Safety model</p>
+        <h1>Validate before runtime</h1>
+        <p class="lede">The current maker library focuses on authoring, validation, import/export, and dry-run previews. It deliberately avoids running untrusted Lua directly.</p>
+      </div>
+      <pre><code>Import ZIP
+  -> block path traversal
+  -> enforce file count
+  -> enforce byte limits
+  -> require module.json
+  -> validate entry script
+  -> report unsafe tokens</code></pre>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Blocked patterns</p>
+        <h2>Unsafe calls are reported</h2>
+      </div>
+      <div class="template-table" role="table" aria-label="Unsafe Lua tokens">
+        <div role="row" class="table-head">
+          <span role="columnheader">Token</span>
+          <span role="columnheader">Reason</span>
+          <span role="columnheader">Result</span>
+        </div>
+        <div role="row">
+          <span role="cell"><code>os.execute</code></span>
+          <span role="cell">Can run host commands</span>
+          <span role="cell">Warning in validation and dry-run</span>
+        </div>
+        <div role="row">
+          <span role="cell"><code>io.popen</code></span>
+          <span role="cell">Can spawn host processes</span>
+          <span role="cell">Warning in validation and dry-run</span>
+        </div>
+        <div role="row">
+          <span role="cell"><code>package.loadlib</code></span>
+          <span role="cell">Can load native libraries</span>
+          <span role="cell">Warning in validation and dry-run</span>
+        </div>
+        <div role="row">
+          <span role="cell"><code>dofile</code> / <code>loadfile</code></span>
+          <span role="cell">Can bypass project entry checks</span>
+          <span role="cell">Warning in validation and dry-run</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Clouse Lua Module Maker</span>
+    <a href="index.html">Home</a>
+  </footer>
+</body>
+</html>

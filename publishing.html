@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Publishing Lua Module Maker Docs</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Clouse Lua Module Maker</a>
+    <nav aria-label="Docs navigation">
+      <a href="index.html#workflow">Workflow</a>
+      <a href="editor.html">Editor</a>
+      <a href="safety.html">Safety</a>
+      <a href="publishing.html">GitHub Pages</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero docs-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Public docs</p>
+        <h1>Publish with GitHub Pages</h1>
+        <p class="lede">The docs folder is a standalone static site. A separate docs-only repository can publish it publicly without exposing the full client source.</p>
+      </div>
+      <pre><code>docs/
+  index.html
+  editor.html
+  safety.html
+  publishing.html
+  styles.css
+  script.js
+  examples/</code></pre>
+    </section>
+
+    <section class="section split">
+      <div>
+        <p class="eyebrow">Workflow</p>
+        <h2>Pages deployment</h2>
+        <p>The included workflow uploads <code>docs/</code> as a Pages artifact and deploys it through GitHub Actions. When used in a docs-only repository, the same files can live at repository root and be served directly.</p>
+      </div>
+      <pre><code>actions/configure-pages@v5
+actions/upload-pages-artifact@v3
+actions/deploy-pages@v4</code></pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Clouse Lua Module Maker</span>
+    <a href="index.html">Home</a>
+  </footer>
+</body>
+</html>

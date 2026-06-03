@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clouse Lua Module Maker Docs</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top">Clouse Lua Module Maker</a>
+    <nav aria-label="Docs navigation">
+      <a href="#workflow">Workflow</a>
+      <a href="editor.html">Editor</a>
+      <a href="safety.html">Safety</a>
+      <a href="#api">API</a>
+      <a href="#templates">Templates</a>
+      <a href="publishing.html">GitHub Pages</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Author, validate, import, export</p>
+        <h1>Clouse Lua Module Maker</h1>
+        <p class="lede">A file-backed module authoring kit for building Lua projects from the client UI, packaging them as safe ZIP exports, and documenting them for public GitHub Pages hosting.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#quickstart">Start</a>
+          <a class="button secondary" href="examples/basic.lua">Basic template</a>
+        </div>
+      </div>
+      <div class="studio-panel" aria-label="Lua Module Studio preview">
+        <div class="panel-title">
+          <span>Lua Module Studio</span>
+          <span class="status-dot"></span>
+        </div>
+        <canvas id="studioCanvas" width="620" height="340" aria-label="Visual preview of module maker workflow"></canvas>
+      </div>
+    </section>
+
+    <section id="quickstart" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Quickstart</p>
+        <h2>Create a module from the client UI</h2>
+      </div>
+      <div class="steps">
+        <article>
+          <span class="step-num">1</span>
+          <h3>Open Misc</h3>
+          <p>Find <strong>Lua Module Studio</strong> in the Misc category and pick a project slot such as <code>quick_start</code>.</p>
+        </article>
+        <article>
+          <span class="step-num">2</span>
+          <h3>Pick a template</h3>
+          <p>Choose Basic, HUD, Tick, Command, or Config, then press <strong>Create Template</strong>.</p>
+        </article>
+        <article>
+          <span class="step-num">3</span>
+          <h3>Validate and export</h3>
+          <p>Use <strong>Load File</strong>, <strong>Insert Snippet</strong>, <strong>Save Buffer</strong>, and <strong>Dry Run Preview</strong> before exporting.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="editor" class="section split">
+      <div>
+        <p class="eyebrow">Editor workflow</p>
+        <h2>Script changes from client actions</h2>
+        <p>Lua Module Studio now keeps a safe editor buffer for selected project files. You can load a file, insert generated snippets, save the buffer, reload from disk, duplicate projects, rename projects, and delete projects with an explicit safety toggle.</p>
+        <p><a class="button secondary" href="editor.html">Open editor docs</a></p>
+      </div>
+      <pre><code>Project: quick_start
+File: Main Script
+Snippet: Tick Logger
+
+Load File
+Insert Snippet
+Save Buffer
+Dry Run Preview
+Export Project</code></pre>
+    </section>
+
+    <section id="workflow" class="section split">
+      <div>
+        <p class="eyebrow">Project layout</p>
+        <h2>Generated files</h2>
+        <p>Every module project is created under <code>clouse/lua-modules/&lt;project_id&gt;</code>. Imports are checked for path traversal, size, and required manifest fields before they become a project.</p>
+      </div>
+      <pre><code>clouse/lua-modules/quick_start/
+  module.json
+  main.lua
+  settings.json
+  README.md
+  api/clouse.lua
+  assets/.keep</code></pre>
+    </section>
+
+    <section id="api" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">API shape</p>
+        <h2>Lua entry points</h2>
+      </div>
+      <div class="api-grid">
+        <article>
+          <h3><code>on_load(ctx)</code></h3>
+          <p>Initialize state, load saved JSON, and print setup messages.</p>
+        </article>
+        <article>
+          <h3><code>on_tick(ctx)</code></h3>
+          <p>Run client-tick logic and read player or world snapshots.</p>
+        </article>
+        <article>
+          <h3><code>on_render_hud(ctx, draw)</code></h3>
+          <p>Draw simple HUD overlays from the HUD template.</p>
+        </article>
+        <article>
+          <h3><code>on_command(ctx, args)</code></h3>
+          <p>Build command-style modules with subcommand parsing.</p>
+        </article>
+      </div>
+      <pre class="code-large"><code>local module = {
+  id = "quick_start",
+  name = "Quick Start"
+}
+
+function module.on_tick(ctx)
+  if not ctx.setting("enabled", true) then
+    return
+  end
+
+  local player = ctx.player()
+  ctx.log("tick " .. player.name)
+end
+
+return module</code></pre>
+    </section>
+
+    <section id="templates" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Templates</p>
+        <h2>Starter projects included</h2>
+      </div>
+      <div class="template-table" role="table" aria-label="Lua templates">
+        <div role="row" class="table-head">
+          <span role="columnheader">Template</span>
+          <span role="columnheader">Best for</span>
+          <span role="columnheader">Events</span>
+        </div>
+        <div role="row">
+          <span role="cell">Basic</span>
+          <span role="cell">Small utility modules</span>
+          <span role="cell">load, unload, tick</span>
+        </div>
+        <div role="row">
+          <span role="cell">HUD</span>
+          <span role="cell">Overlay displays</span>
+          <span role="cell">load, render_hud, tick</span>
+        </div>
+        <div role="row">
+          <span role="cell">Tick</span>
+          <span role="cell">Game loop tools</span>
+          <span role="cell">load, tick</span>
+        </div>
+        <div role="row">
+          <span role="cell">Command</span>
+          <span role="cell">Chat command packs</span>
+          <span role="cell">load, command</span>
+        </div>
+        <div role="row">
+          <span role="cell">Config</span>
+          <span role="cell">Stateful tools</span>
+          <span role="cell">load, settings_changed, tick</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="publishing" class="section split">
+      <div>
+        <p class="eyebrow">Publishing</p>
+        <h2>GitHub Pages-ready</h2>
+        <p>This site lives in <code>docs/</code>. The included Pages workflow publishes that folder when the workspace is pushed to a GitHub repository with Pages enabled for GitHub Actions.</p>
+        <p><a class="button secondary" href="publishing.html">Open publishing docs</a></p>
+      </div>
+      <pre><code>.github/workflows/pages.yml
+docs/index.html
+docs/styles.css
+docs/script.js
+docs/examples/basic.lua</code></pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Clouse Lua Module Maker</span>
+    <a href="#top">Back to top</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
