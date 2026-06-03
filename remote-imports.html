@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Remote Marketplace Imports</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Clouse Lua Module Maker</a>
+    <nav aria-label="Docs navigation">
+      <a href="marketplace.html">Marketplace</a>
+      <a href="remote-imports.html">Remote Imports</a>
+      <a href="marketplace-trust.html">Trust</a>
+      <a href="verification.html">Verification</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero docs-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Remote imports</p>
+        <h1>Fail closed before import</h1>
+        <p class="lede">Remote marketplace imports download public ZIP packages only from allowlisted HTTPS docs hosts, verify size and checksum, then reuse the same ZIP and manifest safety checks as local imports.</p>
+      </div>
+      <pre><code>downloadAndImportEntry(id)
+  -> require https
+  -> require evproject.github.io
+  -> reject > 8 MB
+  -> verify SHA-256
+  -> importArchive(...)
+  -> validate module.json</code></pre>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Checks</p>
+        <h2>Import gates</h2>
+      </div>
+      <div class="api-grid">
+        <article>
+          <h3>Host allowlist</h3>
+          <p>Only <code>evproject.github.io</code> is accepted for current public marketplace packages.</p>
+        </article>
+        <article>
+          <h3>Size cap</h3>
+          <p>Downloads stop once the package exceeds the configured 8 MB maximum.</p>
+        </article>
+        <article>
+          <h3>Checksum</h3>
+          <p>The ZIP must match the marketplace entry's SHA-256 hash before extraction.</p>
+        </article>
+        <article>
+          <h3>ZIP safety</h3>
+          <p>Path traversal, missing manifests, oversized projects, and too many files are rejected.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Clouse Lua Module Maker</span>
+    <a href="index.html">Home</a>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marketplace Trust Rules</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Clouse Lua Module Maker</a>
+    <nav aria-label="Docs navigation">
+      <a href="marketplace.html">Marketplace</a>
+      <a href="remote-imports.html">Remote Imports</a>
+      <a href="marketplace-trust.html">Trust</a>
+      <a href="safety.html">Safety</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero docs-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Trust rules</p>
+        <h1>Index first, package second</h1>
+        <p class="lede">Marketplace packages are imported only after their metadata, source host, byte size, checksum, archive paths, and manifest have all passed validation.</p>
+      </div>
+      <pre><code>index.json entry
+  id
+  version
+  importUrl
+  checksumSha256
+  tags
+  docsUrl</code></pre>
+    </section>
+
+    <section class="section split">
+      <div>
+        <p class="eyebrow">Filters</p>
+        <h2>Browse intentionally</h2>
+        <p>The Studio can filter marketplace entries by tag, featured status, and template before local or remote import.</p>
+      </div>
+      <pre><code>Tag: all / starter / hud / settings / commands / safe-preview
+Featured: all / featured only
+Template: all / basic / hud / config / command</code></pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Clouse Lua Module Maker</span>
+    <a href="index.html">Home</a>
+  </footer>
+</body>
+</html>

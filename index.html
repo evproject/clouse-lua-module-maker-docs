@@ -15,6 +15,8 @@
       <a href="fullscreen.html">Full Screen</a>
       <a href="runtime.html">Runtime</a>
       <a href="marketplace.html">Marketplace</a>
+      <a href="remote-imports.html">Remote Imports</a>
+      <a href="verification.html">Verification</a>
       <a href="safety.html">Safety</a>
       <a href="#api">API</a>
       <a href="#templates">Templates</a>
@@ -205,6 +207,21 @@ draw.text(...)</code></pre>
       <pre><code>docs/marketplace/index.json
 docs/marketplace/packages/*.zip
 clouse/lua-exports/lua-module-pack-manifest.json</code></pre>
+    </section>
+
+    <section id="remote-imports" class="section split">
+      <div>
+        <p class="eyebrow">Remote imports</p>
+        <h2>Download packages safely</h2>
+        <p>Remote marketplace import only accepts HTTPS packages from allowlisted docs hosts, caps download size, verifies SHA-256, then reuses ZIP traversal and manifest validation.</p>
+        <p><a class="button secondary" href="remote-imports.html">Open remote import docs</a></p>
+      </div>
+      <pre><code>HTTPS only
+Host allowlist
+8 MB package cap
+SHA-256 required
+ZIP traversal blocked
+Manifest required</code></pre>
     </section>
 
     <section id="publishing" class="section split">

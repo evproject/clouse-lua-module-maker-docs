@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lua Module Verification Harness</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Clouse Lua Module Maker</a>
+    <nav aria-label="Docs navigation">
+      <a href="runtime.html">Runtime</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="verification.html">Verification</a>
+      <a href="safety.html">Safety</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero docs-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Verification</p>
+        <h1>Self-check the maker stack</h1>
+        <p class="lede">Run Verification from Lua Module Studio to exercise the tokenizer, parser, runtime, maker import/export, and marketplace checksum/import paths without command-line steps.</p>
+      </div>
+      <pre><code>PASS tokenizer parses identifiers
+PASS parser discovers hooks
+PASS runtime executes ctx.log
+PASS runtime rejects os.execute
+PASS maker exports/imports ZIPs
+PASS marketplace validates checksums</code></pre>
+    </section>
+
+    <section class="section split">
+      <div>
+        <p class="eyebrow">Coverage</p>
+        <h2>What it checks</h2>
+        <p>The harness creates temporary projects under <code>tmp/lua-verification</code>, runs safe runtime samples, checks unsafe rejection, exports and imports ZIPs, and validates marketplace packages.</p>
+      </div>
+      <pre><code>LuaPreviewTokenizer
+LuaPreviewParser
+LuaPreviewRuntime
+LuaModuleMaker
+LuaMarketplaceManager</code></pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Clouse Lua Module Maker</span>
+    <a href="index.html">Home</a>
+  </footer>
+</body>
+</html>

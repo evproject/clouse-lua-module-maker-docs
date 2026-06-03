@@ -14,6 +14,8 @@
       <a href="fullscreen.html">Full Screen</a>
       <a href="runtime.html">Runtime</a>
       <a href="marketplace.html">Marketplace</a>
+      <a href="remote-imports.html">Remote Imports</a>
+      <a href="marketplace-trust.html">Trust</a>
       <a href="safety.html">Safety</a>
     </nav>
   </header>
@@ -23,7 +25,7 @@
       <div class="hero-copy">
         <p class="eyebrow">Marketplace</p>
         <h1>Import example modules</h1>
-        <p class="lede">The marketplace is a public JSON index plus ZIP packages. Lua Module Studio validates SHA-256 checksums before importing through the existing safe ZIP path traversal checks.</p>
+        <p class="lede">The marketplace is a public JSON index plus ZIP packages. Lua Module Studio can import local docs packages or download public packages after host, size, and SHA-256 checks.</p>
         <div class="hero-actions">
           <a class="button primary" href="marketplace/index.json">Open index JSON</a>
           <a class="button secondary" href="marketplace/packages/quick_start.zip">Download Quick Start</a>
@@ -68,6 +70,7 @@
         <p class="eyebrow">Format</p>
         <h2>Index fields</h2>
         <p>Each entry includes id, name, version, author, description, template, import URL, local package path, checksum, docs URL, featured flag, and tags.</p>
+        <p><a class="button secondary" href="marketplace-trust.html">Open trust rules</a></p>
       </div>
       <pre><code>docs/marketplace/index.json
 docs/marketplace/packages/quick_start.zip
