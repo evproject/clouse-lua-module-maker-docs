@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lua Testing Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Clouse Lua Module Maker</a>
+    <nav aria-label="Docs navigation">
+      <a href="diagnostics.html">Diagnostics</a>
+      <a href="preview-scenarios.html">Scenarios</a>
+      <a href="verification.html">Verification</a>
+      <a href="publish-assistant.html">Publish</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero docs-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Testing dashboard</p>
+        <h1>One pass for module readiness</h1>
+        <p class="lede">The Dashboard action runs diagnostics, validation, every preview scenario, verification, package export, profile export, and marketplace checksum checks from the UI.</p>
+      </div>
+      <pre><code>dashboard | passed=10 | failed=0
+PASS diagnostics
+PASS validation
+PASS dry-run movement_tick
+PASS verification
+PASS package export
+PASS profile export</code></pre>
+    </section>
+
+    <section class="section split">
+      <div>
+        <p class="eyebrow">Report</p>
+        <h2>Readable pass/fail output</h2>
+        <p>The dashboard writes concise lines to the Studio console. Failed checks include the reason so the next click can go straight to diagnostics, builder, scenarios, or export.</p>
+      </div>
+      <pre><code>Dashboard button
+Run Testing Dashboard action
+No command line required</code></pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Clouse Lua Module Maker</span>
+    <a href="index.html">Home</a>
+  </footer>
+</body>
+</html>

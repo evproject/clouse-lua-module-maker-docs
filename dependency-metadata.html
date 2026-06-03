@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lua Dependency Metadata</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Clouse Lua Module Maker</a>
+    <nav aria-label="Docs navigation">
+      <a href="visual-builder.html">Builder</a>
+      <a href="diagnostics.html">Diagnostics</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="publish-assistant.html">Publish</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero docs-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Dependencies</p>
+        <h1>Describe module relationships</h1>
+        <p class="lede">Use Dep, Req Dep, and Conflict controls to add dependency metadata to <code>module.json</code> without editing raw JSON.</p>
+      </div>
+      <pre><code>{
+  "minApiVersion": "clouse-lua-module-v1",
+  "requiredModules": ["base_runtime"],
+  "optionalModules": ["hud_panel"],
+  "conflicts": ["legacy_hud"]
+}</code></pre>
+    </section>
+
+    <section class="section split">
+      <div>
+        <p class="eyebrow">Diagnostics</p>
+        <h2>Dependency checks</h2>
+        <p>Diagnostics warn when dependency arrays are malformed, ids are not sanitized, <code>minApiVersion</code> is missing, or the same module is both required and conflicting.</p>
+      </div>
+      <pre><code>requiredModules: array
+optionalModules: array
+conflicts: array
+minApiVersion: string</code></pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Clouse Lua Module Maker</span>
+    <a href="index.html">Home</a>
+  </footer>
+</body>
+</html>

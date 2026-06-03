@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lua Marketplace Publish Assistant</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Clouse Lua Module Maker</a>
+    <nav aria-label="Docs navigation">
+      <a href="marketplace.html">Marketplace</a>
+      <a href="remote-imports.html">Remote Imports</a>
+      <a href="testing-dashboard.html">Dashboard</a>
+      <a href="publishing.html">GitHub Pages</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero docs-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Publish assistant</p>
+        <h1>Create a validated marketplace draft</h1>
+        <p class="lede">Publish Draft validates the project, exports a ZIP, copies it to the docs marketplace packages folder, calculates SHA-256, updates the local index, and writes a draft JSON file.</p>
+      </div>
+      <pre><code>docs/marketplace/packages/quick_start.zip
+docs/marketplace/index.json
+clouse/lua-exports/quick_start-marketplace-draft.json</code></pre>
+    </section>
+
+    <section class="section split">
+      <div>
+        <p class="eyebrow">Important</p>
+        <h2>No automatic remote import</h2>
+        <p>The assistant prepares local docs marketplace files. It does not download or import the package. Sync Docs publishes the docs-only repo after review.</p>
+      </div>
+      <pre><code>Validates:
+docsUrl
+importUrl
+checksumSha256
+tags
+package path</code></pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Clouse Lua Module Maker</span>
+    <a href="index.html">Home</a>
+  </footer>
+</body>
+</html>

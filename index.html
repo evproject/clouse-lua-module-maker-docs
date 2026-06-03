@@ -20,6 +20,8 @@
       <a href="autocomplete.html">Autocomplete</a>
       <a href="visual-builder.html">Visual Builder</a>
       <a href="preview-scenarios.html">Scenarios</a>
+      <a href="testing-dashboard.html">Dashboard</a>
+      <a href="asset-browser.html">Assets</a>
       <a href="verification.html">Verification</a>
       <a href="safety.html">Safety</a>
       <a href="#api">API</a>
@@ -313,6 +315,60 @@ settings.json
 preview-scenarios.json
 README.md
 marketplace-entry.json</code></pre>
+    </section>
+
+    <section id="dashboard" class="section split">
+      <div>
+        <p class="eyebrow">Testing dashboard</p>
+        <h2>Run the whole module readiness pass</h2>
+        <p>The dashboard runs diagnostics, validation, dry-run scenarios, verification, package export, profile export, and marketplace checksum checks from one UI action.</p>
+        <p><a class="button secondary" href="testing-dashboard.html">Open dashboard docs</a></p>
+      </div>
+      <pre><code>Dashboard
+PASS diagnostics
+PASS validation
+PASS dry-run scenarios
+PASS package export
+PASS profile export</code></pre>
+    </section>
+
+    <section id="assets" class="section split">
+      <div>
+        <p class="eyebrow">Assets</p>
+        <h2>Browse and import module assets safely</h2>
+        <p>The asset browser lists files under <code>assets/</code>, imports assets from the latest export/profile ZIP, and deletes only after the asset delete toggle is armed.</p>
+        <p><a class="button secondary" href="asset-browser.html">Open asset docs</a></p>
+      </div>
+      <pre><code>Assets
+Asset In
+Asset Safe / Asset Armed
+Del Asset</code></pre>
+    </section>
+
+    <section id="dependencies" class="section split">
+      <div>
+        <p class="eyebrow">Dependencies</p>
+        <h2>Declare module relationships from UI</h2>
+        <p>Dependency metadata now supports required modules, optional modules, conflicts, and minimum API version. Diagnostics flag malformed fields and impossible combinations.</p>
+        <p><a class="button secondary" href="dependency-metadata.html">Open dependency docs</a></p>
+      </div>
+      <pre><code>requiredModules
+optionalModules
+conflicts
+minApiVersion</code></pre>
+    </section>
+
+    <section id="publish-assistant" class="section split">
+      <div>
+        <p class="eyebrow">Publish assistant</p>
+        <h2>Generate a marketplace draft</h2>
+        <p>Publish Draft exports the project, copies the package into the docs marketplace folder, calculates SHA-256, updates the local index, and writes a draft JSON.</p>
+        <p><a class="button secondary" href="publish-assistant.html">Open publish docs</a></p>
+      </div>
+      <pre><code>Publish Draft
+docs/marketplace/packages/id.zip
+docs/marketplace/index.json
+clouse/lua-exports/id-marketplace-draft.json</code></pre>
     </section>
 
     <section id="publishing" class="section split">

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lua Asset Browser</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Clouse Lua Module Maker</a>
+    <nav aria-label="Docs navigation">
+      <a href="profile-bundles.html">Profiles</a>
+      <a href="safety.html">Safety</a>
+      <a href="fullscreen.html">Full Screen</a>
+      <a href="publish-assistant.html">Publish</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero docs-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Assets</p>
+        <h1>Manage module files under assets</h1>
+        <p class="lede">List assets, import assets from the latest export/profile ZIP, and delete the first listed asset only after arming the asset delete toggle.</p>
+      </div>
+      <pre><code>Assets
+icon.png | bytes=2048 | type=png
+
+Asset In
+Asset Safe / Asset Armed
+Del Asset</code></pre>
+    </section>
+
+    <section class="section split">
+      <div>
+        <p class="eyebrow">Safety</p>
+        <h2>Path and size gates</h2>
+        <p>Asset operations resolve paths inside the current module's <code>assets/</code> folder, block ZIP traversal, skip <code>.keep</code>, cap imports at 128 files and 4 MB, and refuse delete unless armed.</p>
+      </div>
+      <pre><code>assets/
+max files: 128
+max bytes: 4 MB
+delete requires armed toggle</code></pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Clouse Lua Module Maker</span>
+    <a href="index.html">Home</a>
+  </footer>
+</body>
+</html>
