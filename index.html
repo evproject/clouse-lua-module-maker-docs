@@ -19,9 +19,13 @@
       <a href="diagnostics.html">Diagnostics</a>
       <a href="autocomplete.html">Autocomplete</a>
       <a href="visual-builder.html">Visual Builder</a>
+      <a href="onboarding-wizard.html">Wizard</a>
+      <a href="examples-gallery.html">Examples</a>
       <a href="preview-scenarios.html">Scenarios</a>
       <a href="testing-dashboard.html">Dashboard</a>
       <a href="asset-browser.html">Assets</a>
+      <a href="import-conflicts.html">Conflicts</a>
+      <a href="package-trust.html">Package Trust</a>
       <a href="verification.html">Verification</a>
       <a href="safety.html">Safety</a>
       <a href="#api">API</a>
@@ -332,6 +336,39 @@ PASS package export
 PASS profile export</code></pre>
     </section>
 
+    <section id="wizard" class="section split">
+      <div>
+        <p class="eyebrow">Onboarding wizard</p>
+        <h2>One button starter setup</h2>
+        <p>The Wizard action creates the target project, applies visual setup, adds dependency metadata, writes scenarios, runs the dashboard, exports a profile, generates trust metadata, and drafts a marketplace package.</p>
+        <p><a class="button secondary" href="onboarding-wizard.html">Open wizard docs</a></p>
+      </div>
+      <pre><code>Wizard
+project setup
+builder setup
+scenarios
+dashboard
+profile bundle
+trust metadata
+marketplace draft</code></pre>
+    </section>
+
+    <section id="examples-gallery" class="section split">
+      <div>
+        <p class="eyebrow">Examples gallery</p>
+        <h2>Browse package cards before import</h2>
+        <p>Examples show template, tags, dependency summary, scenario count, file count, size, and import readiness for local docs marketplace packages.</p>
+        <p><a class="button secondary" href="examples-gallery.html">Open examples docs</a></p>
+      </div>
+      <pre><code>Examples
+tags
+template
+dependencies
+scenarios
+checksum
+import readiness</code></pre>
+    </section>
+
     <section id="assets" class="section split">
       <div>
         <p class="eyebrow">Assets</p>
@@ -369,6 +406,36 @@ minApiVersion</code></pre>
 docs/marketplace/packages/id.zip
 docs/marketplace/index.json
 clouse/lua-exports/id-marketplace-draft.json</code></pre>
+    </section>
+
+    <section id="import-conflicts" class="section split">
+      <div>
+        <p class="eyebrow">Import conflicts</p>
+        <h2>Preview incoming packages safely</h2>
+        <p>Import Info previews project id, name, version, files, size, and conflict status before import. Rename In writes a conflict-safe copy when the incoming id already exists.</p>
+        <p><a class="button secondary" href="import-conflicts.html">Open conflict docs</a></p>
+      </div>
+      <pre><code>Import Info
+Rename In
+Skip
+Overwrite
+lua-import-resolution.json</code></pre>
+    </section>
+
+    <section id="package-trust" class="section split">
+      <div>
+        <p class="eyebrow">Package trust metadata</p>
+        <h2>Verify package digest and provenance notes</h2>
+        <p>Trust New writes a companion trust JSON beside an export, and Trust Check verifies that the package digest still matches before review or import.</p>
+        <p><a class="button secondary" href="package-trust.html">Open package trust docs</a></p>
+      </div>
+      <pre><code>Trust New
+Trust Check
+packageDigestSha256
+sourceDocsUrl
+generatedAt
+generatedBy
+trustNotes</code></pre>
     </section>
 
     <section id="publishing" class="section split">

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lua Import Conflict Resolver</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Clouse Lua Module Maker</a>
+    <nav aria-label="Docs navigation">
+      <a href="fullscreen.html">Full Screen</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="remote-imports.html">Remote Imports</a>
+      <a href="safety.html">Safety</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero docs-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Import conflicts</p>
+        <h1>Preview, rename, overwrite, or skip</h1>
+        <p class="lede">Import Info previews the latest export before it writes anything. Rename In imports a conflict-safe copy with a new project id, while overwrite and skip remain explicit choices.</p>
+      </div>
+      <pre><code>Import Info
+id: quick_start
+name: Quick Start
+version: 1.0.0
+files: 6
+conflict: true
+
+Rename In
+quick_start_imported</code></pre>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Resolution</p>
+        <h2>Every choice writes a summary</h2>
+      </div>
+      <div class="api-grid">
+        <article>
+          <h3>Skip</h3>
+          <p>Leaves the current local project unchanged and records that the incoming package was skipped.</p>
+        </article>
+        <article>
+          <h3>Rename</h3>
+          <p>Rewrites the incoming manifest id/name into a safe temporary archive, then imports it as a separate project.</p>
+        </article>
+        <article>
+          <h3>Overwrite</h3>
+          <p>Uses the standard import overwrite path only after the UI action has made the choice explicit.</p>
+        </article>
+        <article>
+          <h3>Summary</h3>
+          <p>Writes <code>lua-import-resolution.json</code> with package, action, output project, file count, and timestamp.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Clouse Lua Module Maker</span>
+    <a href="index.html">Home</a>
+  </footer>
+</body>
+</html>

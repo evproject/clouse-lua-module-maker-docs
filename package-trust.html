@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lua Package Trust Metadata</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Clouse Lua Module Maker</a>
+    <nav aria-label="Docs navigation">
+      <a href="marketplace.html">Marketplace</a>
+      <a href="marketplace-trust.html">Marketplace Trust</a>
+      <a href="remote-imports.html">Remote Imports</a>
+      <a href="import-conflicts.html">Conflicts</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero docs-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Package trust</p>
+        <h1>Digest metadata beside every package</h1>
+        <p class="lede">Trust New writes a companion metadata file for the latest export. Trust Check recalculates the package digest and verifies the record before import or publish review.</p>
+      </div>
+      <pre><code>quick_start.zip.trust.json
+{
+  "packageDigestSha256": "...",
+  "sourceDocsUrl": "https://...",
+  "generatedAt": "2026-06-03T...",
+  "generatedBy": "Clouse Lua Module Studio",
+  "trustNotes": "Manual trust metadata"
+}</code></pre>
+    </section>
+
+    <section class="section split">
+      <div>
+        <p class="eyebrow">Verification</p>
+        <h2>Local, transparent, no secrets</h2>
+        <p>The trust file stores package digest and provenance notes. It does not store private keys or hidden credentials; verification is a local digest comparison that makes tampering obvious.</p>
+      </div>
+      <pre><code>Trust New
+calculate SHA-256
+write metadata
+
+Trust Check
+read metadata
+recalculate SHA-256
+compare expected vs actual</code></pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Clouse Lua Module Maker</span>
+    <a href="index.html">Home</a>
+  </footer>
+</body>
+</html>

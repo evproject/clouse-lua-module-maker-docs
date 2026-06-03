@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lua Examples Gallery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Clouse Lua Module Maker</a>
+    <nav aria-label="Docs navigation">
+      <a href="marketplace.html">Marketplace</a>
+      <a href="remote-imports.html">Remote Imports</a>
+      <a href="marketplace-trust.html">Trust</a>
+      <a href="package-trust.html">Package Trust</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero docs-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Examples gallery</p>
+        <h1>Preview before import</h1>
+        <p class="lede">The Examples action reads local docs marketplace packages and renders concise cards with tags, template, dependency summary, scenario count, file count, package size, and import readiness.</p>
+      </div>
+      <pre><code>Examples
+quick_start | 1.0.0 | basic
+tags: starter, utility
+scenarios: 5
+dependencies: base_runtime
+files: 6
+checksum verified</code></pre>
+    </section>
+
+    <section class="section split">
+      <div>
+        <p class="eyebrow">Safe import</p>
+        <h2>Gallery imports still validate packages</h2>
+        <p>Import buttons use the marketplace manager, so the same checksum, manifest, archive path, and file-size checks run before a package becomes a local project.</p>
+      </div>
+      <pre><code>Show Examples Gallery
+Import selected example
+Validate checksum
+Block unsafe ZIP paths
+Respect overwrite setting</code></pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Clouse Lua Module Maker</span>
+    <a href="index.html">Home</a>
+  </footer>
+</body>
+</html>
