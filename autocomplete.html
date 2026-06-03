@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lua Studio Autocomplete</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Clouse Lua Module Maker</a>
+    <nav aria-label="Docs navigation">
+      <a href="editor.html">Editor</a>
+      <a href="diagnostics.html">Diagnostics</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="verification-report.html">Reports</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero docs-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Autocomplete</p>
+        <h1>Insert safe Lua authoring snippets</h1>
+        <p class="lede">The Studio suggestion engine proposes ctx APIs, hook bodies, module fields, settings IDs, and marketplace examples from the active editor context.</p>
+      </div>
+      <pre><code>Suggest
+Insert Auto
+Ctrl+Space
+
+ctx.log("message")
+ctx.setting("enabled", true)
+function module.on_tick(ctx)
+return module</code></pre>
+    </section>
+
+    <section class="section split">
+      <div>
+        <p class="eyebrow">Sources</p>
+        <h2>Suggestions come from project context</h2>
+        <p>Built-in suggestions cover runtime APIs and hooks. Project suggestions add setting IDs from <code>module.json</code> and <code>settings.json</code>. Marketplace suggestions summarize cached entries after a remote index refresh.</p>
+      </div>
+      <pre><code>ctx.log
+ctx.player
+ctx.world
+ctx.import_json
+ctx.export_json
+draw.text
+module.state</code></pre>
+    </section>
+
+    <section class="section split">
+      <div>
+        <p class="eyebrow">Safety</p>
+        <h2>Inserted text is sanitized</h2>
+        <p>Autocomplete inserts static snippets or sanitized IDs only. Control characters are stripped, and suggestions do not execute code or import marketplace packages.</p>
+      </div>
+      <pre><code>Safe insert only
+No remote execution
+No package import
+No file writes until Save</code></pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Clouse Lua Module Maker</span>
+    <a href="index.html">Home</a>
+  </footer>
+</body>
+</html>

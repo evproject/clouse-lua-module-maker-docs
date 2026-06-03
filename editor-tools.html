@@ -13,6 +13,8 @@
       <a href="editor.html">Editor</a>
       <a href="fullscreen.html">Full Screen</a>
       <a href="editor-tools.html">Tools</a>
+      <a href="diagnostics.html">Diagnostics</a>
+      <a href="autocomplete.html">Autocomplete</a>
       <a href="runtime.html">Runtime</a>
     </nav>
   </header>
@@ -22,7 +24,7 @@
       <div class="hero-copy">
         <p class="eyebrow">Editor tools</p>
         <h1>Faster script editing</h1>
-        <p class="lede">The full-screen Studio now includes focused authoring tools for navigation, line editing, formatting, and quick access to manifest/settings files.</p>
+        <p class="lede">The full-screen Studio now includes focused authoring tools for navigation, line editing, formatting, diagnostics, autocomplete, and quick access to manifest/settings files.</p>
       </div>
       <pre><code>Find: ctx / module / function / return / setting
 Find Next
@@ -31,7 +33,10 @@ Dup Line
 Comment
 Format
 Manifest
-Settings</code></pre>
+Settings
+Diagnostics
+Suggest
+Insert Auto</code></pre>
     </section>
 
     <section class="section">
@@ -51,6 +56,14 @@ Settings</code></pre>
         <article>
           <h3>Format</h3>
           <p>Normalize indentation around simple function and if/end blocks.</p>
+        </article>
+        <article>
+          <h3>Diagnostics</h3>
+          <p>Check Lua, JSON, settings, hooks, and publishing metadata without mutating files.</p>
+        </article>
+        <article>
+          <h3>Autocomplete</h3>
+          <p>Cycle safe suggestions for ctx APIs, hooks, module fields, settings, and marketplace examples.</p>
         </article>
         <article>
           <h3>Quick files</h3>

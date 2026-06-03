@@ -13,6 +13,7 @@
       <a href="runtime.html">Runtime</a>
       <a href="marketplace.html">Marketplace</a>
       <a href="verification.html">Verification</a>
+      <a href="verification-report.html">Report JSON</a>
       <a href="safety.html">Safety</a>
     </nav>
   </header>
@@ -22,27 +23,43 @@
       <div class="hero-copy">
         <p class="eyebrow">Verification</p>
         <h1>Self-check the maker stack</h1>
-        <p class="lede">Run Verification from Lua Module Studio to exercise the tokenizer, parser, runtime, maker import/export, and marketplace checksum/import paths without command-line steps.</p>
+        <p class="lede">Run Verification from Lua Module Studio to exercise the tokenizer, parser, runtime, maker import/export, marketplace checksum/import, and hosted remote index paths without command-line steps.</p>
       </div>
       <pre><code>PASS tokenizer parses identifiers
 PASS parser discovers hooks
 PASS runtime executes ctx.log
 PASS runtime rejects os.execute
 PASS maker exports/imports ZIPs
-PASS marketplace validates checksums</code></pre>
+PASS marketplace validates checksums
+PASS marketplace remote index validates hosted JSON</code></pre>
     </section>
 
     <section class="section split">
       <div>
         <p class="eyebrow">Coverage</p>
         <h2>What it checks</h2>
-        <p>The harness creates temporary projects under <code>tmp/lua-verification</code>, runs safe runtime samples, checks unsafe rejection, exports and imports ZIPs, and validates marketplace packages.</p>
+        <p>The harness creates temporary projects under <code>tmp/lua-verification</code>, runs safe runtime samples, checks unsafe rejection, exports and imports ZIPs, validates marketplace packages, and validates the hosted remote index JSON.</p>
       </div>
       <pre><code>LuaPreviewTokenizer
 LuaPreviewParser
 LuaPreviewRuntime
 LuaModuleMaker
-LuaMarketplaceManager</code></pre>
+LuaMarketplaceManager
+Remote index cache</code></pre>
+    </section>
+
+    <section class="section split">
+      <div>
+        <p class="eyebrow">Export</p>
+        <h2>Write a JSON report</h2>
+        <p>Use <strong>Export Report</strong> in the full-screen Studio or <strong>Export Verification Report</strong> from compact settings. The report lands at <code>clouse/lua-exports/lua-verification-report.json</code>.</p>
+        <p><a class="button secondary" href="verification-report.html">Open report docs</a></p>
+      </div>
+      <pre><code>generatedAt
+passed
+failed
+passedAll
+lines[]</code></pre>
     </section>
   </main>
 

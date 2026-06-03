@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lua Verification Report JSON</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Clouse Lua Module Maker</a>
+    <nav aria-label="Docs navigation">
+      <a href="verification.html">Verification</a>
+      <a href="diagnostics.html">Diagnostics</a>
+      <a href="remote-imports.html">Remote Imports</a>
+      <a href="publishing.html">GitHub Pages</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero docs-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Reports</p>
+        <h1>Read exported verification results</h1>
+        <p class="lede">Export Verification Report writes a machine-readable JSON file to <code>clouse/lua-exports/lua-verification-report.json</code>.</p>
+      </div>
+      <pre><code>{
+  "generatedAt": 1760000000000,
+  "passed": 7,
+  "failed": 0,
+  "passedAll": true,
+  "lines": [
+    "PASS tokenizer parses identifiers",
+    "PASS marketplace remote index validates hosted JSON"
+  ]
+}</code></pre>
+    </section>
+
+    <section class="section split">
+      <div>
+        <p class="eyebrow">Fields</p>
+        <h2>How to interpret it</h2>
+        <p><code>passed</code> and <code>failed</code> are counts. <code>passedAll</code> is true only when every check succeeded. <code>lines</code> keeps the same readable PASS/FAIL entries shown in the Studio console.</p>
+      </div>
+      <pre><code>passedAll: true
+safe to continue authoring
+
+passedAll: false
+read FAIL lines first
+fix before publishing</code></pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Clouse Lua Module Maker</span>
+    <a href="index.html">Home</a>
+  </footer>
+</body>
+</html>

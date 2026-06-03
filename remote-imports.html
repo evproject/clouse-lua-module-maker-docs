@@ -22,9 +22,15 @@
       <div class="hero-copy">
         <p class="eyebrow">Remote imports</p>
         <h1>Fail closed before import</h1>
-        <p class="lede">Remote marketplace imports download public ZIP packages only from allowlisted HTTPS docs hosts, verify size and checksum, then reuse the same ZIP and manifest safety checks as local imports.</p>
+        <p class="lede">Remote marketplace imports download public ZIP packages only from allowlisted HTTPS docs hosts, verify size and checksum, then reuse the same ZIP and manifest safety checks as local imports. Refresh Remote Index updates the cached public index first and never imports packages by itself.</p>
       </div>
-      <pre><code>downloadAndImportEntry(id)
+      <pre><code>refreshRemoteIndex()
+  -> require https
+  -> require evproject.github.io
+  -> reject > 512 KB
+  -> validate index JSON
+
+downloadAndImportEntry(id)
   -> require https
   -> require evproject.github.io
   -> reject > 8 MB
@@ -39,6 +45,10 @@
         <h2>Import gates</h2>
       </div>
       <div class="api-grid">
+        <article>
+          <h3>Index refresh</h3>
+          <p>The hosted <code>marketplace/index.json</code> is downloaded into a local cache only after host, size, and JSON validation pass.</p>
+        </article>
         <article>
           <h3>Host allowlist</h3>
           <p>Only <code>evproject.github.io</code> is accepted for current public marketplace packages.</p>

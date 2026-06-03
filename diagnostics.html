@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lua Studio Diagnostics</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Clouse Lua Module Maker</a>
+    <nav aria-label="Docs navigation">
+      <a href="editor.html">Editor</a>
+      <a href="autocomplete.html">Autocomplete</a>
+      <a href="remote-imports.html">Remote Imports</a>
+      <a href="verification.html">Verification</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero docs-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Diagnostics</p>
+        <h1>Catch broken modules in the Studio UI</h1>
+        <p class="lede">Run Diagnostics checks the active editor buffer and related project files without writing to disk. The console shows severity, file, line, and a focused message.</p>
+      </div>
+      <pre><code>Diagnostics
+error | main.lua:41 | main.lua must end by returning the module table.
+warning | main.lua:9 | Unknown module hook: on_render_world
+warning | module.json:6 | Marketplace metadata should include author.</code></pre>
+    </section>
+
+    <section class="section split">
+      <div>
+        <p class="eyebrow">Checks</p>
+        <h2>What it catches</h2>
+        <p>The pass looks for missing <code>return module</code>, unbalanced <code>function</code>/<code>end</code> blocks, unsafe host tokens, unknown hooks, malformed JSON, duplicate settings, empty settings, missing metadata, and missing docs links.</p>
+      </div>
+      <pre><code>main.lua
+module.json
+settings.json
+
+Read-only pass
+No save required
+No project mutation</code></pre>
+    </section>
+
+    <section class="section split">
+      <div>
+        <p class="eyebrow">UI</p>
+        <h2>Where to run it</h2>
+        <p>Use <strong>Diagnostics</strong> in the full-screen inspector, press <code>Ctrl+G</code>, or use <strong>Run Diagnostics</strong> from the compact Lua Module Studio settings.</p>
+      </div>
+      <pre><code>Severity:
+error   blocks a clean export
+warning needs review
+info    improves publishing quality</code></pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Clouse Lua Module Maker</span>
+    <a href="index.html">Home</a>
+  </footer>
+</body>
+</html>

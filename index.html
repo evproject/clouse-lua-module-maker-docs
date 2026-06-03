@@ -16,6 +16,8 @@
       <a href="runtime.html">Runtime</a>
       <a href="marketplace.html">Marketplace</a>
       <a href="remote-imports.html">Remote Imports</a>
+      <a href="diagnostics.html">Diagnostics</a>
+      <a href="autocomplete.html">Autocomplete</a>
       <a href="verification.html">Verification</a>
       <a href="safety.html">Safety</a>
       <a href="#api">API</a>
@@ -213,15 +215,45 @@ clouse/lua-exports/lua-module-pack-manifest.json</code></pre>
       <div>
         <p class="eyebrow">Remote imports</p>
         <h2>Download packages safely</h2>
-        <p>Remote marketplace import only accepts HTTPS packages from allowlisted docs hosts, caps download size, verifies SHA-256, then reuses ZIP traversal and manifest validation.</p>
+        <p>Remote marketplace import only accepts HTTPS packages from allowlisted docs hosts, caps download size, verifies SHA-256, then reuses ZIP traversal and manifest validation. The remote index refresh is separate and never imports a package by itself.</p>
         <p><a class="button secondary" href="remote-imports.html">Open remote import docs</a></p>
       </div>
-      <pre><code>HTTPS only
+      <pre><code>Refresh Remote Index
+HTTPS only
 Host allowlist
+512 KB index cap
 8 MB package cap
 SHA-256 required
 ZIP traversal blocked
 Manifest required</code></pre>
+    </section>
+
+    <section id="diagnostics" class="section split">
+      <div>
+        <p class="eyebrow">Diagnostics</p>
+        <h2>Check modules before saving or exporting</h2>
+        <p>The Studio diagnostics pass reads the active buffer and project files without mutating them. It catches missing <code>return module</code>, unknown hooks, unsafe tokens, malformed JSON, duplicate settings, and missing publishing metadata.</p>
+        <p><a class="button secondary" href="diagnostics.html">Open diagnostics docs</a></p>
+      </div>
+      <pre><code>Diagnostics
+error | main.lua:28 | missing return module
+warning | main.lua:7 | unknown hook
+warning | module.json:4 | missing author</code></pre>
+    </section>
+
+    <section id="autocomplete" class="section split">
+      <div>
+        <p class="eyebrow">Autocomplete</p>
+        <h2>Insert safe ctx, hook, and setting snippets</h2>
+        <p>Autocomplete suggests client runtime APIs, hook bodies, module fields, settings IDs, and marketplace examples from the current editor context.</p>
+        <p><a class="button secondary" href="autocomplete.html">Open autocomplete docs</a></p>
+      </div>
+      <pre><code>Suggest
+Insert Auto
+ctx.log("message")
+ctx.setting("enabled", true)
+function module.on_tick(ctx)
+return module</code></pre>
     </section>
 
     <section id="publishing" class="section split">
