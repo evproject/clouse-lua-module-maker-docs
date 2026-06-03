@@ -248,6 +248,69 @@ canvas {
   text-align: center;
 }
 
+.studio-mock {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #0a0d11;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
+}
+
+.mock-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.mock-grid {
+  display: grid;
+  grid-template-columns: 120px minmax(180px, 1fr) 150px;
+  gap: 8px;
+  padding: 10px;
+  min-height: 330px;
+}
+
+.mock-sidebar,
+.mock-editor,
+.mock-inspector {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #111820;
+  padding: 12px;
+  min-width: 0;
+}
+
+.mock-sidebar span,
+.mock-inspector span,
+.mock-inspector em {
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--muted);
+  padding: 7px;
+  font-size: 12px;
+  font-style: normal;
+}
+
+.mock-sidebar .active,
+.mock-inspector em {
+  background: rgba(91, 214, 200, 0.2);
+  color: var(--text);
+}
+
+.mock-editor code {
+  display: block;
+  color: #d8e6ea;
+  white-space: nowrap;
+}
+
 .section {
   padding: clamp(42px, 7vw, 88px) clamp(18px, 5vw, 72px);
   border-bottom: 1px solid var(--line);
@@ -364,6 +427,10 @@ article p {
   .split,
   .steps,
   .api-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mock-grid {
     grid-template-columns: 1fr;
   }
 

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Full-Screen Lua Studio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Clouse Lua Module Maker</a>
+    <nav aria-label="Docs navigation">
+      <a href="index.html#workflow">Workflow</a>
+      <a href="editor.html">Editor</a>
+      <a href="fullscreen.html">Full Screen</a>
+      <a href="safety.html">Safety</a>
+      <a href="publishing.html">GitHub Pages</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero docs-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Full-screen studio</p>
+        <h1>Edit, validate, preview, export</h1>
+        <p class="lede">The full-screen Lua Studio opens from Misc > Lua Module Studio and gives module authors a project browser, source editor, inspector, dry-run console, and docs publishing action.</p>
+      </div>
+      <div class="studio-mock" aria-label="Full-screen Lua Studio visual preview">
+        <div class="mock-header">
+          <span>Lua Module Studio</span>
+          <span>quick_start / main.lua</span>
+        </div>
+        <div class="mock-grid">
+          <div class="mock-sidebar">
+            <strong>Projects</strong>
+            <span class="active">quick_start</span>
+            <span>hud_panel</span>
+            <span>tick_tool</span>
+            <strong>Files</strong>
+            <span class="active">Main Script</span>
+            <span>Manifest</span>
+            <span>Settings</span>
+          </div>
+          <div class="mock-editor">
+            <code>1  local module = {</code>
+            <code>2    id = "quick_start",</code>
+            <code>3    name = "Quick Start"</code>
+            <code>4  }</code>
+            <code>5</code>
+            <code>6  function module.on_tick(ctx)</code>
+            <code>7    local player = ctx.player()</code>
+            <code>8    ctx.log(player.name)</code>
+            <code>9  end</code>
+          </div>
+          <div class="mock-inspector">
+            <strong>Inspector</strong>
+            <span>Template: Basic</span>
+            <span>Snippet: Tick Logger</span>
+            <span>Create Project</span>
+            <span>Insert Snippet</span>
+            <span>Dry Run Preview</span>
+            <strong>Console</strong>
+            <em>dry-run | exportReady=true</em>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Toolbar</p>
+        <h2>Primary actions</h2>
+      </div>
+      <div class="api-grid">
+        <article>
+          <h3>Load and Save</h3>
+          <p>Load selected files into the editor and save through the bounded safe buffer.</p>
+        </article>
+        <article>
+          <h3>Validate and Dry Run</h3>
+          <p>Validate manifest/script readiness and simulate discovered hooks without executing Lua.</p>
+        </article>
+        <article>
+          <h3>Import and Export</h3>
+          <p>Import latest ZIP exports with path traversal checks and export validated module ZIPs.</p>
+        </article>
+        <article>
+          <h3>Sync Docs</h3>
+          <p>Copy the local docs site to the public docs-only GitHub Pages repository and push updates.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split">
+      <div>
+        <p class="eyebrow">Shortcuts</p>
+        <h2>Keyboard workflow</h2>
+        <p>The screen supports editor typing, caret movement, page scrolling, and common project actions. Escape leaves editor focus first, then closes the screen.</p>
+      </div>
+      <pre><code>Ctrl+S  Save
+Ctrl+R  Reload
+Ctrl+F  Validate
+Ctrl+D  Dry-run preview
+Ctrl+E  Export
+Ctrl+I  Insert snippet
+Ctrl+O  Open public docs
+Tab     Insert two spaces</code></pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Clouse Lua Module Maker</span>
+    <a href="index.html">Home</a>
+  </footer>
+</body>
+</html>

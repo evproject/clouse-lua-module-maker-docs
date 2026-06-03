@@ -12,6 +12,7 @@
     <nav aria-label="Docs navigation">
       <a href="index.html#workflow">Workflow</a>
       <a href="editor.html">Editor</a>
+      <a href="fullscreen.html">Full Screen</a>
       <a href="safety.html">Safety</a>
       <a href="publishing.html">GitHub Pages</a>
     </nav>
@@ -22,7 +23,7 @@
       <div class="hero-copy">
         <p class="eyebrow">Public docs</p>
         <h1>Publish with GitHub Pages</h1>
-        <p class="lede">The docs folder is a standalone static site. A separate docs-only repository can publish it publicly without exposing the full client source.</p>
+        <p class="lede">The docs folder is a standalone static site. A separate docs-only repository can publish it publicly without exposing the full client source, and Lua Module Studio can sync it from the UI.</p>
       </div>
       <pre><code>docs/
   index.html
@@ -38,7 +39,7 @@
       <div>
         <p class="eyebrow">Workflow</p>
         <h2>Pages deployment</h2>
-        <p>The included workflow uploads <code>docs/</code> as a Pages artifact and deploys it through GitHub Actions. When used in a docs-only repository, the same files can live at repository root and be served directly.</p>
+        <p>The included workflow uploads <code>docs/</code> as a Pages artifact and deploys it through GitHub Actions. The public docs-only repository serves the same files from its root and can be updated by <strong>Sync Docs</strong>.</p>
       </div>
       <pre><code>actions/configure-pages@v5
 actions/upload-pages-artifact@v3
