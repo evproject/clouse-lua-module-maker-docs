@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lua Profile Bundles</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Clouse Lua Module Maker</a>
+    <nav aria-label="Docs navigation">
+      <a href="marketplace.html">Marketplace</a>
+      <a href="remote-imports.html">Remote Imports</a>
+      <a href="save-history.html">History</a>
+      <a href="publishing.html">GitHub Pages</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero docs-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Profile bundles</p>
+        <h1>Export recommended module setup</h1>
+        <p class="lede">Profile Out creates a ZIP with setup files for sharing or reapplying. Profile In imports the latest profile bundle after traversal and JSON validation.</p>
+      </div>
+      <pre><code>quick_start-profile-20260603_120000.zip
+  profile.json
+  module.json
+  settings.json
+  preview-scenarios.json
+  README.md
+  marketplace-entry.json</code></pre>
+    </section>
+
+    <section class="section split">
+      <div>
+        <p class="eyebrow">Validation</p>
+        <h2>Import gates</h2>
+        <p>Only known profile files are accepted. ZIP traversal is blocked, JSON files are parsed before use, imports are capped at 32 files and 2 MB, and Studio snapshots the project before profile import.</p>
+      </div>
+      <pre><code>allowed files only
+max files: 32
+max bytes: 2 MB
+JSON validation
+history snapshot before import</code></pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Clouse Lua Module Maker</span>
+    <a href="index.html">Home</a>
+  </footer>
+</body>
+</html>

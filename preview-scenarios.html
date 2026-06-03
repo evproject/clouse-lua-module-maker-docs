@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lua Preview Scenarios</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Clouse Lua Module Maker</a>
+    <nav aria-label="Docs navigation">
+      <a href="runtime.html">Runtime</a>
+      <a href="visual-builder.html">Builder</a>
+      <a href="verification.html">Verification</a>
+      <a href="profile-bundles.html">Profiles</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero docs-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Preview scenarios</p>
+        <h1>Test hooks with different mock inputs</h1>
+        <p class="lede">Dry Scenario runs the safe preview runtime with selected player, world, command args, and settings-changed values.</p>
+      </div>
+      <pre><code>Scenario: Movement Tick
+player.name = MovingPlayer
+player.yaw = 92
+world.fps = 120
+ticks = 8
+hook = on_tick</code></pre>
+    </section>
+
+    <section class="section split">
+      <div>
+        <p class="eyebrow">Presets</p>
+        <h2>Included scenarios</h2>
+        <p>Balanced Player runs every discovered hook. Movement Tick focuses tick loops. HUD Render tests draw output. Command Status supplies sample args. Settings Changed supplies a setting id and value.</p>
+      </div>
+      <pre><code>Balanced Player
+Movement Tick
+HUD Render
+Command Status
+Settings Changed</code></pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Clouse Lua Module Maker</span>
+    <a href="index.html">Home</a>
+  </footer>
+</body>
+</html>

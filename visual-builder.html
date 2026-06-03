@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lua Visual Module Builder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Clouse Lua Module Maker</a>
+    <nav aria-label="Docs navigation">
+      <a href="fullscreen.html">Full Screen</a>
+      <a href="save-history.html">History</a>
+      <a href="preview-scenarios.html">Scenarios</a>
+      <a href="profile-bundles.html">Profiles</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero docs-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Visual builder</p>
+        <h1>Configure modules from buttons</h1>
+        <p class="lede">Use Apply Build, Add Event, Add Permission, and Add Setting to update <code>module.json</code> and <code>settings.json</code> without typing raw JSON.</p>
+      </div>
+      <pre><code>Build: Utility
+Event: tick
+Perm: hud:draw
+Setting: hud_x
+Apply Build</code></pre>
+    </section>
+
+    <section class="section split">
+      <div>
+        <p class="eyebrow">Generated setup</p>
+        <h2>What the builder edits</h2>
+        <p>The builder normalizes manifest fields, writes docs and marketplace links, adds event names, adds permission ids, creates matching manifest settings, updates <code>settings.json</code>, and writes default preview scenarios.</p>
+      </div>
+      <pre><code>module.json
+  name, version, author
+  description, apiVersion
+  events, permissions
+  settings, links
+
+settings.json
+  enabled, debug, profile, hud_x, hud_y</code></pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Clouse Lua Module Maker</span>
+    <a href="index.html">Home</a>
+  </footer>
+</body>
+</html>

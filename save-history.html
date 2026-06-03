@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lua Studio Save History</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Clouse Lua Module Maker</a>
+    <nav aria-label="Docs navigation">
+      <a href="visual-builder.html">Builder</a>
+      <a href="fullscreen.html">Full Screen</a>
+      <a href="profile-bundles.html">Profiles</a>
+      <a href="safety.html">Safety</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero docs-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Save history</p>
+        <h1>Recover from edits quickly</h1>
+        <p class="lede">Studio save, builder apply, profile import, and manual Snapshot actions write project snapshots under <code>clouse/lua-history</code>.</p>
+      </div>
+      <pre><code>clouse/lua-history/quick_start/
+  20260603_120000_123/
+    history.json
+    files/
+      module.json
+      main.lua
+      settings.json</code></pre>
+    </section>
+
+    <section class="section split">
+      <div>
+        <p class="eyebrow">Safety</p>
+        <h2>Bounded and path checked</h2>
+        <p>History cleanup only deletes old snapshot folders inside <code>clouse/lua-history</code>. Restore copies the latest snapshot into the active project and refuses escaped paths.</p>
+      </div>
+      <pre><code>max snapshots: 12
+snapshot metadata: history.json
+restore source: files/
+active module files are never pruned</code></pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Clouse Lua Module Maker</span>
+    <a href="index.html">Home</a>
+  </footer>
+</body>
+</html>

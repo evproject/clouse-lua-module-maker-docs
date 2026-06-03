@@ -18,6 +18,8 @@
       <a href="editor-tools.html">Tools</a>
       <a href="diagnostics.html">Diagnostics</a>
       <a href="autocomplete.html">Autocomplete</a>
+      <a href="visual-builder.html">Builder</a>
+      <a href="preview-scenarios.html">Scenarios</a>
       <a href="remote-imports.html">Remote Imports</a>
       <a href="safety.html">Safety</a>
       <a href="publishing.html">GitHub Pages</a>
@@ -29,7 +31,7 @@
       <div class="hero-copy">
         <p class="eyebrow">Full-screen studio</p>
         <h1>Edit, validate, preview, export</h1>
-        <p class="lede">The full-screen Lua Studio opens from Misc > Lua Module Studio and gives module authors a project browser, source editor, compact inspector, diagnostics, autocomplete, marketplace import tools, dry-run console, and docs publishing action.</p>
+        <p class="lede">The full-screen Lua Studio opens from Misc > Lua Module Studio and gives module authors a project browser, source editor, compact inspector, visual builder, save history, scenario previews, profile bundles, marketplace import tools, dry-run console, and docs publishing action.</p>
       </div>
       <div class="studio-mock" aria-label="Full-screen Lua Studio visual preview">
         <div class="mock-header">
@@ -64,6 +66,8 @@
             <span>Snippet: Tick Logger</span>
             <span>Diagnostics</span>
             <span>Insert Auto</span>
+            <span>Apply Build</span>
+            <span>Dry Scenario</span>
             <span>Create Project</span>
             <span>Insert Snippet</span>
             <span>Dry Run Preview</span>
@@ -101,6 +105,18 @@
           <p>Filter entries by tag/template/featured status, validate checksums, import local or remote examples, and export a pack manifest.</p>
         </article>
         <article>
+          <h3>Visual Builder</h3>
+          <p>Apply metadata presets, add events, permissions, settings, links, and preview scenarios without editing raw JSON.</p>
+        </article>
+        <article>
+          <h3>History and Profiles</h3>
+          <p>Snapshot projects, restore the latest snapshot, export profile bundles, and import validated profile setup ZIPs.</p>
+        </article>
+        <article>
+          <h3>Preview Scenarios</h3>
+          <p>Run dry-run previews with selected mock player, world, command args, setting ids, and setting values.</p>
+        </article>
+        <article>
           <h3>Editor Tools</h3>
           <p>Find text, jump through the file, duplicate lines, comment/uncomment, format indentation, run diagnostics, insert autocomplete, and jump to manifest/settings.</p>
         </article>
@@ -117,9 +133,13 @@
 Ctrl+R  Reload
 Ctrl+F  Validate
 Ctrl+D  Dry-run preview
+Ctrl+B  Apply builder
 Ctrl+E  Export
 Ctrl+G  Diagnostics
+Ctrl+H  Snapshot history
 Ctrl+I  Insert snippet
+Ctrl+L  Dry scenario
+Ctrl+P  Export profile
 Ctrl+Space Insert suggestion
 Ctrl+J  Export verification report
 Ctrl+O  Open public docs

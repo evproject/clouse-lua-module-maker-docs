@@ -18,6 +18,8 @@
       <a href="remote-imports.html">Remote Imports</a>
       <a href="diagnostics.html">Diagnostics</a>
       <a href="autocomplete.html">Autocomplete</a>
+      <a href="visual-builder.html">Visual Builder</a>
+      <a href="preview-scenarios.html">Scenarios</a>
       <a href="verification.html">Verification</a>
       <a href="safety.html">Safety</a>
       <a href="#api">API</a>
@@ -254,6 +256,63 @@ ctx.log("message")
 ctx.setting("enabled", true)
 function module.on_tick(ctx)
 return module</code></pre>
+    </section>
+
+    <section id="visual-builder" class="section split">
+      <div>
+        <p class="eyebrow">Visual builder</p>
+        <h2>Edit setup without raw JSON</h2>
+        <p>The Studio can now apply metadata presets, add events, add permissions, create settings, write docs links, and generate preview scenarios from buttons.</p>
+        <p><a class="button secondary" href="visual-builder.html">Open builder docs</a></p>
+      </div>
+      <pre><code>Build: Utility / HUD / Command / Config
+Add Event
+Add Permission
+Add Setting
+Apply Build</code></pre>
+    </section>
+
+    <section id="history" class="section split">
+      <div>
+        <p class="eyebrow">Save history</p>
+        <h2>Snapshot before risky edits</h2>
+        <p>Studio saves and builder/profile actions create local snapshots under <code>clouse/lua-history/&lt;project&gt;</code> with bounded retention and safe restore controls.</p>
+        <p><a class="button secondary" href="save-history.html">Open history docs</a></p>
+      </div>
+      <pre><code>Snapshot
+Restore
+history.json
+files/
+max retained: 12</code></pre>
+    </section>
+
+    <section id="scenarios" class="section split">
+      <div>
+        <p class="eyebrow">Preview scenarios</p>
+        <h2>Dry-run with different player and world inputs</h2>
+        <p>Scenario presets cover load, tick, HUD render, command, and settings-changed hooks with editable player, world, args, and setting values.</p>
+        <p><a class="button secondary" href="preview-scenarios.html">Open scenario docs</a></p>
+      </div>
+      <pre><code>Balanced Player
+Movement Tick
+HUD Render
+Command Status
+Settings Changed</code></pre>
+    </section>
+
+    <section id="profiles" class="section split">
+      <div>
+        <p class="eyebrow">Profile bundles</p>
+        <h2>Ship recommended setup with a module</h2>
+        <p>Profile bundles export metadata, settings, preview scenarios, README notes, and marketplace draft metadata as a validated ZIP.</p>
+        <p><a class="button secondary" href="profile-bundles.html">Open profile docs</a></p>
+      </div>
+      <pre><code>profile.json
+module.json
+settings.json
+preview-scenarios.json
+README.md
+marketplace-entry.json</code></pre>
     </section>
 
     <section id="publishing" class="section split">
