@@ -13,6 +13,8 @@
       <a href="#workflow">Workflow</a>
       <a href="editor.html">Editor</a>
       <a href="fullscreen.html">Full Screen</a>
+      <a href="runtime.html">Runtime</a>
+      <a href="marketplace.html">Marketplace</a>
       <a href="safety.html">Safety</a>
       <a href="#api">API</a>
       <a href="#templates">Templates</a>
@@ -25,7 +27,7 @@
       <div class="hero-copy">
         <p class="eyebrow">Author, validate, import, export</p>
         <h1>Clouse Lua Module Maker</h1>
-        <p class="lede">A file-backed module authoring kit for building Lua projects from the client UI, packaging them as safe ZIP exports, and documenting them for public GitHub Pages hosting.</p>
+        <p class="lede">A file-backed module authoring kit for building Lua projects from the client UI, previewing them in a sandboxed runtime, packaging them as safe ZIP exports, and documenting them for public GitHub Pages hosting.</p>
         <div class="hero-actions">
           <a class="button primary" href="#quickstart">Start</a>
           <a class="button secondary" href="examples/basic.lua">Basic template</a>
@@ -175,6 +177,34 @@ return module</code></pre>
           <span role="cell">load, settings_changed, tick</span>
         </div>
       </div>
+    </section>
+
+    <section id="runtime" class="section split">
+      <div>
+        <p class="eyebrow">Sandbox runtime</p>
+        <h2>Dry-run previews execute safe hooks</h2>
+        <p>The preview runtime tokenizes and parses a tiny Lua subset, rejects unsafe tokens before evaluation, then runs hooks against mocked ctx/player/world data.</p>
+        <p><a class="button secondary" href="runtime.html">Open runtime docs</a></p>
+      </div>
+      <pre><code>ctx.log(...)
+ctx.setting(...)
+ctx.player()
+ctx.world()
+ctx.import_json(...)
+ctx.export_json(...)
+draw.text(...)</code></pre>
+    </section>
+
+    <section id="marketplace" class="section split">
+      <div>
+        <p class="eyebrow">Marketplace</p>
+        <h2>Docs-backed module index</h2>
+        <p>The public docs site includes a JSON marketplace index with featured modules, tags, versions, import URLs, checksums, and docs links.</p>
+        <p><a class="button secondary" href="marketplace.html">Open marketplace</a></p>
+      </div>
+      <pre><code>docs/marketplace/index.json
+docs/marketplace/packages/*.zip
+clouse/lua-exports/lua-module-pack-manifest.json</code></pre>
     </section>
 
     <section id="publishing" class="section split">

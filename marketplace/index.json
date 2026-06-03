@@ -1,0 +1,79 @@
+﻿{
+    "name":  "Clouse Lua Module Marketplace",
+    "version":  "1",
+    "updatedAt":  "2026-06-03 14:56:05",
+    "entries":  [
+                    {
+                        "id":  "quick_start",
+                        "name":  "Quick Start",
+                        "version":  "1.0.0",
+                        "author":  "Clouse",
+                        "description":  "Starter module with load, unload, and tick hooks.",
+                        "template":  "basic",
+                        "importUrl":  "https://evproject.github.io/clouse-lua-module-maker-docs/marketplace/packages/quick_start.zip",
+                        "localPackage":  "marketplace/packages/quick_start.zip",
+                        "checksumSha256":  "2cd4f5a4dec0501e8133484f5593ece15ee8a23b100cdc62faef3ac7a7d4e67e",
+                        "docsUrl":  "https://evproject.github.io/clouse-lua-module-maker-docs/marketplace.html#quick_start",
+                        "featured":  true,
+                        "tags":  [
+                                     "starter",
+                                     "utility",
+                                     "safe-preview"
+                                 ]
+                    },
+                    {
+                        "id":  "hud_panel",
+                        "name":  "HUD Panel",
+                        "version":  "1.0.0",
+                        "author":  "Clouse",
+                        "description":  "Overlay module with a render hook and live settings.",
+                        "template":  "hud",
+                        "importUrl":  "https://evproject.github.io/clouse-lua-module-maker-docs/marketplace/packages/hud_panel.zip",
+                        "localPackage":  "marketplace/packages/hud_panel.zip",
+                        "checksumSha256":  "f3c9606c919d8b1b78e066ff64292976675041e54b38f8c48085c112a1f33ddb",
+                        "docsUrl":  "https://evproject.github.io/clouse-lua-module-maker-docs/marketplace.html#hud_panel",
+                        "featured":  true,
+                        "tags":  [
+                                     "hud",
+                                     "overlay",
+                                     "draw"
+                                 ]
+                    },
+                    {
+                        "id":  "config_tool",
+                        "name":  "Config Tool",
+                        "version":  "1.0.0",
+                        "author":  "Clouse",
+                        "description":  "Settings-heavy module with import/export examples.",
+                        "template":  "config",
+                        "importUrl":  "https://evproject.github.io/clouse-lua-module-maker-docs/marketplace/packages/config_tool.zip",
+                        "localPackage":  "marketplace/packages/config_tool.zip",
+                        "checksumSha256":  "670758c361bf489007c5102b2ebea8b3094e73667f0bdbd4706c00019129c7d7",
+                        "docsUrl":  "https://evproject.github.io/clouse-lua-module-maker-docs/marketplace.html#config_tool",
+                        "featured":  false,
+                        "tags":  [
+                                     "settings",
+                                     "state",
+                                     "json"
+                                 ]
+                    },
+                    {
+                        "id":  "command_pack",
+                        "name":  "Command Pack",
+                        "version":  "1.0.0",
+                        "author":  "Clouse",
+                        "description":  "Command-style module with argument parsing examples.",
+                        "template":  "command",
+                        "importUrl":  "https://evproject.github.io/clouse-lua-module-maker-docs/marketplace/packages/command_pack.zip",
+                        "localPackage":  "marketplace/packages/command_pack.zip",
+                        "checksumSha256":  "cc04419306caee0800c56332f379560791360b77f20ba7da0b8aa672ddd5365f",
+                        "docsUrl":  "https://evproject.github.io/clouse-lua-module-maker-docs/marketplace.html#command_pack",
+                        "featured":  false,
+                        "tags":  [
+                                     "commands",
+                                     "chat",
+                                     "status"
+                                 ]
+                    }
+                ]
+}

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sandboxed Lua Preview Runtime</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Clouse Lua Module Maker</a>
+    <nav aria-label="Docs navigation">
+      <a href="editor.html">Editor</a>
+      <a href="fullscreen.html">Full Screen</a>
+      <a href="runtime.html">Runtime</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="safety.html">Safety</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero docs-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Runtime</p>
+        <h1>Preview hooks safely</h1>
+        <p class="lede">Dry Run Preview now uses a custom tokenizer, hook parser, and tiny evaluator for generated Lua modules. It executes safe hooks against mocked data and records what would happen.</p>
+      </div>
+      <pre><code>on_load(ctx)
+on_tick(ctx) x3
+on_render_hud(ctx, draw)
+on_command(ctx, {"status"})
+on_settings_changed(ctx, "debug", true)
+on_unload(ctx)</code></pre>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Supported subset</p>
+        <h2>Enough for authoring previews</h2>
+      </div>
+      <div class="api-grid">
+        <article>
+          <h3>Literals and tables</h3>
+          <p>Strings, numbers, booleans, nil, simple table literals, and module fields.</p>
+        </article>
+        <article>
+          <h3>Control flow</h3>
+          <p>Local variables, assignments, simple functions, return, and if/then/end blocks.</p>
+        </article>
+        <article>
+          <h3>Expressions</h3>
+          <p>String concatenation, equality, arithmetic, modulo, not, or, tostring, and math.floor.</p>
+        </article>
+        <article>
+          <h3>Safe ctx calls</h3>
+          <p>ctx.log, ctx.setting, ctx.player, ctx.world, import_json, export_json, and draw.text.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split">
+      <div>
+        <p class="eyebrow">Blocked</p>
+        <h2>No host access</h2>
+        <p>The runtime rejects unsafe tokens before evaluation. It does not expose OS, file, network, reflection, process, native library, debug, package, require, io, or unrestricted os access.</p>
+      </div>
+      <pre><code>os.execute
+io.popen
+package.loadlib
+debug.*
+loadfile
+dofile
+require
+package.*
+io.*
+os.*</code></pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Clouse Lua Module Maker</span>
+    <a href="index.html">Home</a>
+  </footer>
+</body>
+</html>

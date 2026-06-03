@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lua Module Marketplace</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Clouse Lua Module Maker</a>
+    <nav aria-label="Docs navigation">
+      <a href="editor.html">Editor</a>
+      <a href="fullscreen.html">Full Screen</a>
+      <a href="runtime.html">Runtime</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="safety.html">Safety</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero docs-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Marketplace</p>
+        <h1>Import example modules</h1>
+        <p class="lede">The marketplace is a public JSON index plus ZIP packages. Lua Module Studio validates SHA-256 checksums before importing through the existing safe ZIP path traversal checks.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="marketplace/index.json">Open index JSON</a>
+          <a class="button secondary" href="marketplace/packages/quick_start.zip">Download Quick Start</a>
+        </div>
+      </div>
+      <pre><code>{
+  "id": "quick_start",
+  "version": "1.0.0",
+  "importUrl": ".../quick_start.zip",
+  "checksumSha256": "...",
+  "tags": ["starter", "utility"]
+}</code></pre>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Featured</p>
+        <h2>Included examples</h2>
+      </div>
+      <div class="api-grid">
+        <article id="quick_start">
+          <h3>Quick Start</h3>
+          <p>Basic load, tick, and unload hooks for a small utility module.</p>
+        </article>
+        <article id="hud_panel">
+          <h3>HUD Panel</h3>
+          <p>Draws simple overlay text using mocked draw calls in preview.</p>
+        </article>
+        <article id="config_tool">
+          <h3>Config Tool</h3>
+          <p>Demonstrates mocked import_json and export_json state changes.</p>
+        </article>
+        <article id="command_pack">
+          <h3>Command Pack</h3>
+          <p>Shows command-style argument handling for status commands.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split">
+      <div>
+        <p class="eyebrow">Format</p>
+        <h2>Index fields</h2>
+        <p>Each entry includes id, name, version, author, description, template, import URL, local package path, checksum, docs URL, featured flag, and tags.</p>
+      </div>
+      <pre><code>docs/marketplace/index.json
+docs/marketplace/packages/quick_start.zip
+docs/marketplace/packages/hud_panel.zip
+docs/marketplace/packages/config_tool.zip
+docs/marketplace/packages/command_pack.zip</code></pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Clouse Lua Module Maker</span>
+    <a href="index.html">Home</a>
+  </footer>
+</body>
+</html>
